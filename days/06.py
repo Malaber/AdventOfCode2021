@@ -29,6 +29,7 @@ while day != final_day:
     for _ in itertools.repeat(None, new_fishes):
         fishes.append(8)
     day += 1
+    print(day)
     if day == 80:
         print("Part 1")
         print_fishes(day, fishes)
