@@ -28,12 +28,19 @@ puts "PART 2"
 minfuel = nil
 best_pos = -1
 
+move_fuel_cache = {}
+
 (positions.min..positions.max).each do |pos|
   fuel = 0
   positions.each do |p|
     move = (pos - p).abs
     if move > 0
-      move_fuel = (1..move).inject(:+)
+      if move_fuel_cache[move]
+        move_fuel=move_fuel_cache[move]
+      else
+        move_fuel = (1..move).inject(:+)
+        move_fuel_cache[move] = move_fuel
+      end
       fuel += move_fuel
     end
   end
