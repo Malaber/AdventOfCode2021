@@ -10,8 +10,6 @@ lines = Input.get_lines(os.path.basename(__file__))
 
 fishes = [int(fish) for fish in lines[0].split(",")]
 
-print(fishes)
-
 days = 80
 
 while days != 0:
@@ -24,7 +22,6 @@ while days != 0:
             fishes[id] -= 1
     for _ in itertools.repeat(None, new_fishes):
         fishes.append(8)
-    print(fishes)
     days -= 1
 
 print(len(fishes))
