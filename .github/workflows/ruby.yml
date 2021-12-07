@@ -14,4 +14,4 @@ jobs:
       with:
         ruby-version: 3.0.x
     - name: Run Advent of Code
-      run: for f in $PWD/code/*.rb; do ruby $f && printf "\n\n\n\n\n"; done
+      run: for f in $PWD/days/*.rb; do ruby $f && printf "\n\n\n\n\n"; done
