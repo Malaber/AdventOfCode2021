@@ -2,7 +2,7 @@ stages:
   - AdventOfCode
 
 .ruby: &ruby_template
-  image: ruby:2.7
+  image: ruby:3.0
   script:
     - file=$(echo $CI_JOB_NAME | grep -o "[0-9][0-9]")
     - ruby code/$file.rb
