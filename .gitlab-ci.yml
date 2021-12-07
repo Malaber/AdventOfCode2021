@@ -17,3 +17,6 @@ stages:
 
 day_07:
   <<: *ruby_template
+
+day_06:
+  <<: *python_template
