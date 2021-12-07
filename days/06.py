@@ -10,7 +10,7 @@ lines = Input.get_lines(os.path.basename(__file__))
 
 fishes = [int(fish) for fish in lines[0].split(",")]
 
-final_day = 80
+final_day = 256
 day = 0
 
 
