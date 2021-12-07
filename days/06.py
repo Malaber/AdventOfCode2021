@@ -10,9 +10,15 @@ lines = Input.get_lines(os.path.basename(__file__))
 
 fishes = [int(fish) for fish in lines[0].split(",")]
 
-days = 256
+final_day = 80
+day = 0
 
-while days != 0:
+
+def print_fishes(days, fishes):
+    print(f"Day {day}: {len(fishes)}")
+
+
+while day != final_day:
     new_fishes = 0
     for id, fish in enumerate(fishes):
         if fish == 0:
@@ -22,7 +28,10 @@ while days != 0:
             fishes[id] -= 1
     for _ in itertools.repeat(None, new_fishes):
         fishes.append(8)
-    days -= 1
-    print(days)
+    day += 1
+    if day == 80:
+        print("Part 1")
+        print_fishes(day, fishes)
 
-print(len(fishes))
+print("Part 2")
+print_fishes(final_day, fishes)
