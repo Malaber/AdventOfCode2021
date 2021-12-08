@@ -17,10 +17,6 @@ def remove_chars(remove, remove_from):
     return remove_from
 
 
-def update_inv_decode(decoding):
-    return {v: k for k, v in decoding.items()}
-
-
 for line in lines:
     # decoding[input] = output
     decoding = {}
