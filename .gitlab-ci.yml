@@ -5,14 +5,14 @@ stages:
   image: ruby:3.0
   script:
     - file=$(echo $CI_JOB_NAME | grep -o "[0-9][0-9]")
-    - ruby code/$file.rb
+    - ruby days/$file.rb
   stage: AdventOfCode
 
 .python: &python_template
   image: python:3.10
   script:
     - file=$(echo $CI_JOB_NAME | grep -o "[0-9][0-9]")
-    - python code/$file.py
+    - python days/$file.py
   stage: AdventOfCode
 
 day_07:
