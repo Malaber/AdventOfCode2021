@@ -8,6 +8,7 @@ from helpers.input import Input
 lines = Input.get_lines(os.path.basename(__file__))
 
 occurences = 0
+add = 0
 
 
 def remove_chars(remove, remove_from):
@@ -105,8 +106,21 @@ for line in lines:
             occurences += 1
 
     decoding_per_digit = decode(input_digits)
-    pass
+
+    sorted_digits = []
+    for digit in output_digits:
+        sort = "".join(sorted(digit))
+        sorted_digits.append(sort)
+
+    output_value = ""
+    for digit in sorted_digits:
+        output_value += str(decoding_per_digit[digit])
+    output_value_int = int(output_value)
+
+    add += output_value_int
 
 print("Part 1")
 print(occurences)
 
+print("Part 2")
+print(add)
