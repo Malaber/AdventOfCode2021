@@ -17,6 +17,10 @@ def remove_chars(remove, remove_from):
     return remove_from
 
 
+def update_inv_decode(decoding):
+    return {v: k for k, v in decoding.items()}
+
+
 for line in lines:
     # decoding[input] = output
     decoding = {}
@@ -79,6 +83,10 @@ for line in lines:
                 decoding[digit_without_known] = "e"
                 decoding_per_digit[5] = digit
                 break
+
+        four_without_one = remove_chars(one, four)
+        four_without_two = remove_chars(decoding_per_digit[2], four_without_one)
+        decoding[four_without_two] = "b"
 
         print()
 
